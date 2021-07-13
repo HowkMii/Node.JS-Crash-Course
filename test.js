@@ -1,10 +1,8 @@
+setTimeout(() => {
+    console.log('in the time')
+    clearInterval(int);
+}, 3000);
 
-
-const great = (name) =>  {
-    console.log('hello', name);
-}
-
-great('daiki');
-great('howkmii');
-great('abdelhakim');
-great('azzouz');
+const int = setInterval(() =>{
+    console.log("in the interval");
+},1000);
