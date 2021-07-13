@@ -1,4 +1,4 @@
-// const fs = require('fs');
+ const fs = require('fs');
 // //reading file
 // fs.readFile('./docs/test.txt',(err, data)=>{
 //     if (err){
@@ -13,10 +13,10 @@
 //     console.log('file was written');
 // });
 //directories
-fs.mkdir('.assets', (err)=>{
+fs.mkdir('./assets', (err)=>{
     if(err){
         console.log(err);
     }
-    console.log('folder created')
+    console.log('folder created');
 })
 
