@@ -6,7 +6,7 @@ app.set('view engine','ejs');
  
 app.get('/', function (req, res) {
 //   res.send('Hello World')
-res.sendFile('./views/index.html',{root: __dirname});
+res.render('index')
 });
  
 app.get('/about', function (req, res) {
