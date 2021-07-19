@@ -11,13 +11,13 @@ res.render('index')
  
 app.get('/about', function (req, res) {
     // res.send('about')
-    res.sendFile('./views/about.html',{root: __dirname});
+    res.render('About')
   });
 app.get('/about-us', function (req, res) {
     // res.send('about')
     res.redirect('./about');
   });
 app.use((req,res)=>{
-    res.status(404).sendFile('./views/404.html',{root: __dirname})
+    res.status(404).render('404');
 })
 app.listen(3000);
