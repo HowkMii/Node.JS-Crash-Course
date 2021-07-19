@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+//register view engine 
+app.set('view engine','ejs');
+app.set('views','myviews');
  
 app.get('/', function (req, res) {
 //   res.send('Hello World')
