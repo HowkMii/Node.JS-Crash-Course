@@ -5,7 +5,13 @@ const app = express();
 
 // listen for requests
 app.listen(3000);
+app.use((req, res)=>{
+  console.log('new request made: ');
+  console.log('host:', req.hostname);
+  console.log('path :', req.path);
+  console.log('mrthod :' ,req.mrthod);
 
+});
 // register view engine
 app.set('view engine', 'ejs');
 // app.set('views', 'myviews');
