@@ -12,6 +12,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 // listen for requests
 
 app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}));
 app.use(morgan('dev'));
 
 app.use((req, res, next) => {
@@ -57,6 +58,18 @@ app.get('/blogs', (req, res) => {
   Blog.find().sort({ createdAt: -1 })
     .then(result => {
       res.render('index', { blogs: result, title: 'All blogs' });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+app.post('/blogs',(req, res)=>{
+  //console.log(req.body);
+  const blog = new Blog(req.body);
+  
+  blog.save()
+    .then(result => {
+      res.redirect('/blogs');
     })
     .catch(err => {
       console.log(err);
